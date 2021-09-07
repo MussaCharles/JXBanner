@@ -394,8 +394,15 @@ UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedIndex = indexOfIndexPath(indexPath)
+        let selectedCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: cellRegister.reuseIdentifier,
+            for: indexPath)
+        
         delegate?.jxBanner(self,
-                           didSelectItemAt: indexOfIndexPath(indexPath))
+                           didSelectItemAt: selectedIndex)
+        delegate?.jxBanner(self, didSelectItemAt: selectedIndex, cell: selectedCell)
         indexPathErrorDetection()
     }
     

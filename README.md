@@ -229,6 +229,12 @@ extension JXDefaultVC: JXBannerDelegate {
     didSelectItemAt index: Int) {
     print(index)
     }
+    
+    // Another overload which passes both selected cell and index.
+    func jxBanner(_ banner: JXBannerType,
+                  didSelectItemAt index: Int,cell:UICollectionViewCell) {
+                  // Do some stuffs
+}
 
 }
 
@@ -427,6 +433,12 @@ extension JXCustomVC: JXBannerDelegate {
         didSelectItemAt index: Int) {
         print(index)
     }
+    
+    // Another overload which passes both selected cell and index.
+    func jxBanner(_ banner: JXBannerType,
+                  didSelectItemAt index: Int,cell:UICollectionViewCell) {
+                  // Do some stuffs
+ }
 
     // 设置自定义覆盖View, 比如添加自定义外部pageControl和布局
     func jxBanner(_ banner: JXBannerType, coverView: UIView) {

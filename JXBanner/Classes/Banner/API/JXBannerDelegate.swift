@@ -20,6 +20,15 @@ public protocol JXBannerDelegate: class {
     func jxBanner(_ banner: JXBannerType,
                       didSelectItemAt index: Int)
     
+  
+    /// Called when a cell is clicked
+    /// - Parameters:
+    ///   - banner: An instance of JXBannerType.
+    ///   - index: Index of selected cell.
+    ///   - cell: A selected cell.
+    func jxBanner(_ banner: JXBannerType,
+                  didSelectItemAt index: Int,cell:UICollectionViewCell)
+    
     /**
      Returns the index of the item in the middle of the bannerview
      
@@ -50,6 +59,12 @@ public extension JXBannerDelegate {
                       didSelectItemAt index: Int) {
         print(" -- jxBanner select item -- \(index)  -- ")
     }
+    
+    func jxBanner(_ banner: JXBannerType,
+                  didSelectItemAt index: Int,cell:UICollectionViewCell) {
+        
+    }
+    
 
     func jxBanner(_ banner: JXBannerType,
                   center index: Int) {}
